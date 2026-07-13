@@ -3,8 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 from database import get_db, engine
 import models
-from routers import vehicles_router, drivers_router , trips_router
-from .routers import maintenance_router
+from routers import vehicles_router, drivers_router, trips_router, maintenance_router, fuel_router
 
 # Build the database tables from our new models folder
 models.Base.metadata.create_all(bind=engine)
@@ -16,6 +15,7 @@ app.include_router(vehicles_router)
 app.include_router(drivers_router)
 app.include_router(trips_router)
 app.include_router(maintenance_router)
+app.include_router(fuel_router)
 
 @app.get("/")
 def read_root():

@@ -15,6 +15,7 @@ class MaintenanceCreate(MaintenanceBase):
 
 class MaintenanceResponse(MaintenanceBase):
     id: int
+    
 
     class Config:
         from_attributes = True
